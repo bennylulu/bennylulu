@@ -1,81 +1,383 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Beini Lu</title>
-    <meta name="description" content="Beini Lu, M.S. student in Earth and Environmental Engineering at Columbia University." />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="index.html">Beini Lu</a>
-      <nav class="nav" aria-label="Main navigation">
-        <a class="active" href="index.html">Home</a>
-        <a href="education.html">Education</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="activities.html">News</a>
-        <a href="life.html">Life</a>
-      </nav>
-    </header>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beini Lu</title>
+<meta name="description" content="Beini Lu — M.S. student in Earth and Environmental Engineering, Columbia University. Research on optimization and control for renewable energy systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F6F7F1;
+    --bg-soft: #EFF1E7;
+    --ink: #1C2B22;
+    --ink-soft: #566153;
+    --accent: #2E6F5E;
+    --accent-warm: #C08A2E;
+    --line: #DBDCCE;
+    --max: 800px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(46,111,94,0.07), transparent 45%),
+      radial-gradient(circle at 100% 20%, rgba(192,138,46,0.06), transparent 40%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:'Inter',-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
 
-    <main>
-      <section class="hero section">
-        <div>
-          <p class="eyebrow">Welcome</p>
-          <h1>Beini Lu</h1>
-          <p class="subtitle">M.S. Student in Earth & Environmental Engineering, Columbia University</p>
-          <p class="intro">
-            I work on dynamic optimization, model predictive control, and learning-based methods for renewable-powered energy conversion systems. My broader interests include sustainable fuels, industrial decarbonization, energy system optimization, and machine learning for clean energy applications.
-          </p>
-          <div class="actions">
-            <a class="button primary" href="research.html">Explore Research</a>
-            <a class="button" href="education.html">Education</a>
-            <a class="button" href="activities.html">Recent Activities</a>
-            <a class="button" href="mailto:bl3150@columbia.edu">Email</a>
-          </div>
-        </div>
-        <figure class="portrait-card">
-          <img src="assets/0c4df93d2cdf97b977233da551152b4a.jpg" alt="Beini Lu at Columbia Global Sustainability Summit" />
-          <figcaption class="caption-pill">Columbia Global Sustainability Summit · 2026</figcaption>
-        </figure>
-      </section>
+  .hero{padding:60px 0 32px;}
+  .hero-grid{display:flex; align-items:center; gap:36px;}
+  .hero-photo{
+    width:124px; height:124px; border-radius:50%;
+    object-fit:cover; flex-shrink:0;
+    border:3px solid #fff;
+    box-shadow:0 2px 14px rgba(28,43,34,0.14), 0 0 0 1px var(--line);
+  }
+  .hero-text h1{
+    font-family:'Fraunces', serif;
+    font-weight:650;
+    font-optical-sizing:auto;
+    font-size:clamp(32px, 5vw, 44px);
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .hero-role{font-size:15.5px; color:var(--ink-soft); margin:0 0 12px;}
+  .hero-role .dot{color:var(--accent-warm); margin:0 8px;}
+  .hero-links{display:flex; flex-wrap:wrap; gap:0; font-size:14.5px;}
+  .hero-links a{text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:2px; margin-right:16px;}
+  .hero-links a:hover{color:var(--accent); border-color:var(--accent);}
 
-      <section class="section feature-strip" aria-label="Research snapshot">
-        <div class="stat">
-          <strong>Columbia</strong>
-          <span>M.S. in Earth and Environmental Engineering, Sustainable Energy specialization.</span>
-        </div>
-        <div class="stat">
-          <strong>CUP</strong>
-          <span>B.Eng. in New Energy Science and Engineering and dual B.Mgt. in Accounting.</span>
-        </div>
-        <div class="stat">
-          <strong>Focus</strong>
-          <span>Optimization, control, machine learning, and sustainable energy systems.</span>
-        </div>
-      </section>
+  @media (max-width:520px){
+    .hero-grid{flex-direction:column; align-items:flex-start; gap:18px;}
+  }
 
-      <section class="section two-col">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2>From experimental energy conversion to dynamic energy decisions.</h2>
-        </div>
-        <div class="panel">
-          <p>
-            My research path began with hands-on experimental work on hydrogen production from biogas and later expanded into process simulation, data-driven modeling, and optimization. At Columbia, I am developing dynamic models and economic MPC frameworks for integrated CO2-to-ethanol systems under variable renewable power.
-          </p>
-          <p>
-            I am especially interested in how learning-based methods can accelerate optimization and control while respecting physical relationships and strict operational constraints.
-          </p>
-        </div>
-      </section>
-    </main>
+  .nav-wrap{position:sticky; top:0; z-index:20; background:rgba(246,247,241,0.92); backdrop-filter:blur(6px); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  nav.tabs{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none;}
+  nav.tabs::-webkit-scrollbar{display:none;}
+  nav.tabs button{
+    appearance:none; background:none; border:none; cursor:pointer;
+    font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600;
+    letter-spacing:0.02em; text-transform:uppercase;
+    color:var(--ink-soft); padding:16px 14px 13px;
+    border-bottom:2.5px solid transparent;
+    white-space:nowrap;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  nav.tabs button:hover{color:var(--ink);}
+  nav.tabs button.active{color:var(--accent); border-bottom-color:var(--accent);}
 
-    <footer class="footer">
-      <p>© 2026 Beini Lu</p>
-      <p><a href="mailto:bl3150@columbia.edu">bl3150@columbia.edu</a> · <a href="https://www.linkedin.com/in/beini-lu/">LinkedIn</a></p>
-    </footer>
-  </body>
+  .page{display:none; padding:44px 0 60px; animation:fadein .25s ease;}
+  .page.active{display:block;}
+  @keyframes fadein{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);}}
+
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:24px;
+    margin:0 0 22px;
+    color:var(--ink);
+    display:flex; align-items:baseline; gap:10px;
+  }
+  h2 .h2-num{font-size:14px; color:var(--accent-warm); font-family:'Inter',sans-serif; font-weight:700;}
+  .lede{font-size:17.5px; color:var(--ink); max-width:66ch;}
+  .lede + .lede{margin-top:14px;}
+
+  .edu-card{
+    border:1px solid var(--line); border-radius:8px; padding:20px 22px;
+    margin-bottom:16px; background:rgba(255,255,255,0.5);
+  }
+  .edu-card:last-child{margin-bottom:0;}
+  .edu-school{font-weight:650; font-size:17px; font-family:'Fraunces',serif;}
+  .edu-degree{font-size:15.5px; margin:4px 0 8px; color:var(--ink);}
+  .edu-meta{font-size:13.5px; color:var(--ink-soft); display:flex; gap:14px; flex-wrap:wrap;}
+  .edu-meta b{color:var(--accent);}
+
+  .tl-item{position:relative; padding-left:22px; margin-bottom:30px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:0; top:7px;
+    width:8px; height:8px; border-radius:50%;
+    background:var(--accent);
+  }
+  .tl-item::after{
+    content:""; position:absolute; left:3px; top:17px; bottom:-30px;
+    width:1px; background:var(--line);
+  }
+  .tl-item:last-child::after{display:none;}
+  .tl-title{font-weight:600; font-size:16.5px; margin:0 0 2px;}
+  .tl-meta{font-size:14px; color:var(--ink-soft); margin:0 0 8px;}
+  .tl-desc{font-size:15.5px; color:var(--ink); margin:0; max-width:64ch;}
+
+  .news-card{
+    display:flex; gap:18px; border:1px solid var(--line); border-radius:8px;
+    padding:16px; margin-bottom:16px; background:rgba(255,255,255,0.5);
+    transition:box-shadow .15s ease, transform .15s ease;
+  }
+  .news-card:hover{box-shadow:0 4px 18px rgba(28,43,34,0.10); transform:translateY(-1px);}
+  .news-card:last-child{margin-bottom:0;}
+  .news-photo{width:150px; height:150px; object-fit:cover; border-radius:6px; flex-shrink:0; box-shadow:0 0 0 1px var(--line);}
+  .news-body{display:flex; flex-direction:column; justify-content:center;}
+  .news-title{font-weight:650; font-size:16px; font-family:'Fraunces',serif; margin:0 0 4px;}
+  .news-meta{font-size:13px; color:var(--accent-warm); font-weight:600; margin:0 0 8px;}
+  .news-desc{font-size:14.5px; color:var(--ink); margin:0;}
+  @media (max-width:560px){
+    .news-card{flex-direction:column;}
+    .news-photo{width:100%; height:180px;}
+  }
+
+  .pub{margin-bottom:20px; font-size:15.5px; max-width:66ch;}
+  .pub:last-child{margin-bottom:0;}
+  .pub-authors{color:var(--ink);}
+  .pub-authors b{font-weight:600;}
+  .pub-venue{font-style:italic; color:var(--ink-soft);}
+  .pub a{font-size:13.5px; margin-left:8px; white-space:nowrap;}
+
+  .life-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px 28px; margin-bottom:32px;}
+  .life-item{font-size:15.5px;}
+  .life-item .life-label{display:block; font-weight:600; color:var(--accent); font-size:13.5px; margin-bottom:3px;}
+  @media (max-width:520px){ .life-grid{grid-template-columns:1fr;} }
+
+  .photo-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
+  .photo-grid figure{margin:0;}
+  .photo-grid img{
+    width:100%; aspect-ratio:1/1; object-fit:cover;
+    border-radius:4px; display:block;
+    box-shadow:0 0 0 1px var(--line);
+    transition:transform .2s ease;
+  }
+  .photo-grid img:hover{transform:scale(1.03);}
+  .photo-grid figcaption{font-size:12.5px; color:var(--ink-soft); margin-top:6px; line-height:1.3;}
+  @media (max-width:560px){ .photo-grid{grid-template-columns:repeat(2,1fr);} }
+
+  footer{padding:28px 0 60px; font-size:14px; color:var(--ink-soft); border-top:1px solid var(--line); margin-top:20px;}
+  footer a{color:var(--ink-soft); text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-grid">
+      <img class="hero-photo" src="headshot.png" alt="Portrait of Beini Lu">
+      <div class="hero-text">
+        <h1>Beini Lu</h1>
+        <p class="hero-role">M.S. Student, Earth &amp; Environmental Engineering<span class="dot">·</span>Columbia University</p>
+        <div class="hero-links">
+          <a href="mailto:bl3150@columbia.edu">Email</a>
+          <a href="https://www.linkedin.com/in/beini-lu/">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=ZGTVHNwAAAAJ&hl=en">Google Scholar</a>
+          <a href="https://github.com/bennylulu">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="nav-wrap">
+  <div class="wrap">
+    <nav class="tabs">
+      <button data-page="about" class="active">About</button>
+      <button data-page="education">Education</button>
+      <button data-page="research">Research</button>
+      <button data-page="news">News &amp; Talks</button>
+      <button data-page="publications">Publications</button>
+      <button data-page="life">Beyond the Lab</button>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section id="about" class="page active">
+    <h2><span class="h2-num">01</span>About</h2>
+    <p class="lede">I'm a master's student in Sustainable Energy at Columbia University, working on dynamic optimization and model predictive control for renewable-powered energy conversion systems. I'm especially interested in how learning-based methods can speed up optimization and control while still respecting the physical and operational constraints that make energy systems actually work.</p>
+    <p class="lede">My path here started with hands-on experimental work on hydrogen production from biogas, moved through process modeling and techno-economic analysis, and has landed on dynamic control problems — I like that this field keeps pulling me from the lab bench toward the math, and back again.</p>
+  </section>
+
+  <section id="education" class="page">
+    <h2><span class="h2-num">02</span>Education</h2>
+
+    <div class="edu-card">
+      <div class="edu-school">Columbia University</div>
+      <div class="edu-degree">M.S. in Earth and Environmental Engineering, Specialization in Sustainable Energy</div>
+      <div class="edu-meta"><span><b>Expected</b> May 2026</span><span><b>GPA</b> 4.00 / 4.00</span><span>New York, NY</span></div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-school">China University of Petroleum–Beijing</div>
+      <div class="edu-degree">B.Eng. in New Energy Science and Engineering &amp; B.Mgt. in Accounting (Dual Degree)</div>
+      <div class="edu-meta"><span><b>Graduated</b> June 2025</span><span><b>GPA</b> 87.73 / 100</span><span>Beijing, China</span></div>
+    </div>
+  </section>
+
+  <section id="research" class="page">
+    <h2><span class="h2-num">03</span>Research</h2>
+
+    <div class="tl-item">
+      <p class="tl-title">Dynamic Optimization and Control of Integrated CO₂-to-Ethanol Systems under Variable Renewable Power</p>
+      <p class="tl-meta">Columbia University · Advisor: Prof. Bolun Xu · Dec 2025 – Present</p>
+      <p class="tl-desc">Built an integrated Simulink model coupling PEM electrolysis, hydrogen storage, and CO₂-to-ethanol production, and developed a receding-horizon economic MPC framework to coordinate operation under renewable variability.</p>
+    </div>
+
+    <div class="tl-item">
+      <p class="tl-title">Power Sector Analysis Assistant</p>
+      <p class="tl-meta">Institute of Energy, Peking University · Advisor: Dr. Junjie Kang · Mar 2025 – Jun 2025</p>
+      <p class="tl-desc">Compared decarbonization and distributed-PV policy across China and major international markets; supported a mid-term research report on Shandong's PV transition.</p>
+    </div>
+
+    <div class="tl-item">
+      <p class="tl-title">AutoML-Based Optimization of Biogas-to-Syngas Conversion</p>
+      <p class="tl-meta">China University of Petroleum–Beijing · Advisor: Prof. Yeqing Li · Dec 2024 – May 2025</p>
+      <p class="tl-desc">Simulated ~1,000 operating cases in Aspen Plus, then coupled an AutoGluon surrogate model with multi-objective particle swarm optimization to identify high-performing, economically preferred configurations.</p>
+    </div>
+
+    <div class="tl-item">
+      <p class="tl-title">Anaerobic Digestion and Microbial Characterization</p>
+      <p class="tl-meta">Guangzhou Institute of Energy Conversion, CAS · Advisor: Prof. Yongming Sun · Jul 2023 – Aug 2023</p>
+      <p class="tl-desc">Cultivated and characterized microbial isolates for anaerobic-digestion studies, and supported early investigations into microbial electron-transfer mechanisms — work that later fed into a modified-biochar publication.</p>
+    </div>
+
+    <div class="tl-item">
+      <p class="tl-title">Data-Driven Optimization of Hydrogen Production from Biogas Reforming</p>
+      <p class="tl-meta">China University of Petroleum–Beijing · Advisor: Prof. Yeqing Li · Jun 2023 – May 2024</p>
+      <p class="tl-desc">Ran a 42-day experimental campaign on a lab-scale reforming unit, then used AutoGluon, SHAP, and MOPSO to improve hydrogen yield by 6.68% — work that fed into a peer-reviewed publication.</p>
+    </div>
+
+    <div class="tl-item">
+      <p class="tl-title">Gravity Energy Storage Device Fabrication Project</p>
+      <p class="tl-meta">China University of Petroleum–Beijing · Feb 2023 – Apr 2023</p>
+      <p class="tl-desc">Helped build a laboratory-scale gravity energy storage device, then wrote up the design and experimental results — later published in <em>University Physics Experiment</em>.</p>
+    </div>
+
+    <div class="tl-item">
+      <p class="tl-title">Regional Organic Waste Treatment Project</p>
+      <p class="tl-meta">China University of Petroleum–Beijing · Nov 2022 – May 2023</p>
+      <p class="tl-desc">Built RF and KNN models in Python and C++ to optimize temperature control for anaerobic digestion, and explored biomass-derived materials for sodium-ion battery anodes.</p>
+    </div>
+
+  </section>
+
+  <section id="news" class="page">
+    <h2><span class="h2-num">04</span>News &amp; Talks</h2>
+
+    <div class="news-card">
+      <img class="news-photo" src="news-un.jpg" alt="At the United Nations Headquarters">
+      <div class="news-body">
+        <p class="news-title">Accelerating Energy System Innovation and Transition for Equity and Resilience to Advance Global Sustainable Development</p>
+        <p class="news-meta">United Nations Headquarters, New York · Jul 2026</p>
+        <p class="news-desc">Attended this high-level side event on energy system innovation and just transition, co-organized with UN ESCAP and partner institutions.</p>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <img class="news-photo" src="news-cgss.jpg" alt="At the Columbia Global Sustainability Summit">
+      <div class="news-body">
+        <p class="news-title">Columbia Global Sustainability Summit</p>
+        <p class="news-meta">Columbia University, New York · Apr 5, 2026</p>
+        <p class="news-desc">Helped organize as a member of CGELA, supporting a summit that brought together student leaders and sustainability organizations from around the world.</p>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <img class="news-photo" src="news-cub.jpg" alt="At the CUB Columbia AI Club AI Summit, AI x Energy panel">
+      <div class="news-body">
+        <p class="news-title">CUB AI Summit 2026 — AI × Energy Panel</p>
+        <p class="news-meta">Columbia University · Columbia AI Club (CUB), Columbia SIPA</p>
+        <p class="news-desc">Volunteered at the Columbia AI Club's first AI Summit, including a panel on AI's growing power demands featuring speakers from AWS and Wood Mackenzie.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="publications" class="page">
+    <h2><span class="h2-num">05</span>Publications</h2>
+
+    <div class="pub">
+      <span class="pub-authors">Ding, C.*, Zhang, Y.*, Feng, Y., Li, W., Peng, J., Huang, H., Cheng, Z., <b>Lu, B.</b>, Li, L., Li, Y., Feng, L., Zhou, H., &amp; Xu, C.</span> (2024). AI data-driven based in-depth interpretation and inverse design for hydrogen yield from biogas direct reforming. <span class="pub-venue">ACS Sustainable Resource Management, 1</span>(11), 2384–2393.
+      <a href="https://doi.org/10.1021/acssusresmgt.4c00227">DOI</a>
+    </div>
+
+    <div class="pub">
+      <span class="pub-authors">Ding, C., Liu, J., Wang, J., Le, J., <b>Lu, B.</b>, Qu, N., Zhao, S., Zhang, H., Su, J., Li, Y., &amp; Liu, Q.</span> (2025). Modified biochar effectively removes tetracycline and antibiotic resistance genes to enhance anaerobic digestion performance. <span class="pub-venue">Journal of Environmental Chemical Engineering, 13</span>(6), 120076.
+      <a href="https://doi.org/10.1016/j.jece.2025.120076">DOI</a>
+    </div>
+
+    <div class="pub">
+      <span class="pub-authors">Feng, X., Song, L., Zhong, L., <b>Lu, B.</b>, Deng, D., Litti, Y., Kovalev, A. A., Liang, J., Sun, Y., Li, Y., &amp; Li, L.</span> (2024). High modularity driven by disinfectant glutaraldehyde response strategy promotes anaerobic system performance. <span class="pub-venue">SSRN</span> [Preprint].
+      <a href="https://doi.org/10.2139/ssrn.4984147">DOI</a>
+    </div>
+
+    <div class="pub">
+      <span class="pub-authors">Yang, Z., Lü, Y., <b>Lu, B.</b>, Ma, Y., Yang, D., Lin, C., &amp; Zhang, W.</span> (2023). Design and development of a laboratory gravity energy storage device. <span class="pub-venue">University Physics Experiment, 36</span>(5).
+    </div>
+  </section>
+
+  <section id="life" class="page">
+    <h2><span class="h2-num">06</span>Beyond the Lab</h2>
+    <p class="lede">When I'm not at my desk, I'm usually planning the next trip. I like hiking — the kind that starts before sunrise and ends somewhere with a very good view — catching musicals whenever I can, and generally finding an excuse to go somewhere new.</p>
+    <div class="life-grid">
+      <div class="life-item"><span class="life-label">Currently</span>New York, NY</div>
+      <div class="life-item"><span class="life-label">Outside the lab</span>Hiking, musicals, travel</div>
+      <div class="life-item"><span class="life-label">Recently</span>Peru, Turkey, Guatemala</div>
+      <div class="life-item"><span class="life-label">Always up for</span>A good trail or a Broadway recommendation</div>
+    </div>
+    <div class="photo-grid">
+      <figure>
+        <img src="hike-volcano.jpg" alt="Hiking at sunrise near an active volcano">
+        <figcaption>Sunrise hike, Acatenango</figcaption>
+      </figure>
+      <figure>
+        <img src="rainbow-mountain.jpg" alt="Standing in front of Rainbow Mountain, Peru">
+        <figcaption>Rainbow Mountain, Peru</figcaption>
+      </figure>
+      <figure>
+        <img src="broadway.jpg" alt="Playbill for Maybe Happy Ending on Broadway">
+        <figcaption>Maybe Happy Ending, Broadway</figcaption>
+      </figure>
+      <figure>
+        <img src="beach.jpg" alt="On the beach in Miami">
+        <figcaption>Miami</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer>
+    <p>Beini Lu · New York, NY · <a href="mailto:bl3150@columbia.edu">bl3150@columbia.edu</a></p>
+  </footer>
+
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('nav.tabs button');
+  const pages = document.querySelectorAll('.page');
+  function showPage(id, pushHash){
+    pages.forEach(p => p.classList.toggle('active', p.id === id));
+    buttons.forEach(b => b.classList.toggle('active', b.dataset.page === id));
+    if(pushHash) history.replaceState(null, '', '#' + id);
+    window.scrollTo(0, 0);
+  }
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => showPage(btn.dataset.page, true));
+  });
+  const initial = (location.hash || '').replace('#','');
+  if(initial && document.getElementById(initial)){
+    showPage(initial, false);
+  }
+</script>
+
+</body>
 </html>
