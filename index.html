@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beini Lu</title>
+<meta name="description" content="Beini Lu — M.S. student in Earth and Environmental Engineering, Columbia University. Research on optimization and control for renewable energy systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F6F7F1;
+    --bg-soft: #EFF1E7;
+    --ink: #1C2B22;
+    --ink-soft: #566153;
+    --accent: #2E6F5E;
+    --accent-warm: #C08A2E;
+    --line: #DBDCCE;
+    --max: 760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  /* Hero */
+  .hero{padding:72px 0 48px; border-bottom:1px solid var(--line);}
+  .hero-grid{display:flex; align-items:center; gap:36px;}
+  .hero-photo{
+    width:132px; height:132px; border-radius:50%;
+    object-fit:cover; flex-shrink:0;
+    border:3px solid #fff;
+    box-shadow:0 0 0 1px var(--line);
+  }
+  .hero-text h1{
+    font-family:'Fraunces', serif;
+    font-weight:650;
+    font-optical-sizing:auto;
+    font-size:clamp(34px, 5vw, 46px);
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .hero-role{font-size:16px; color:var(--ink-soft); margin:0 0 14px;}
+  .hero-role .dot{color:var(--accent-warm); margin:0 8px;}
+  .hero-links{display:flex; flex-wrap:wrap; gap:14px; font-size:14.5px;}
+  .hero-links a{text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:2px; margin-right:14px;}
+  .hero-links a:last-child{margin-right:0;}
+  .hero-links a:hover{color:var(--accent); border-color:var(--accent);}
+
+  @media (max-width:520px){
+    .hero-grid{flex-direction:column; align-items:flex-start; gap:20px;}
+  }
+
+  /* Sections */
+  section{padding:44px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:22px;
+    margin:0 0 20px;
+    color:var(--ink);
+  }
+  .lede{font-size:17.5px; color:var(--ink); max-width:66ch;}
+  .lede + .lede{margin-top:14px;}
+
+  /* Timeline (research) */
+  .tl-item{position:relative; padding-left:22px; margin-bottom:30px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:0; top:7px;
+    width:8px; height:8px; border-radius:50%;
+    background:var(--accent);
+  }
+  .tl-item::after{
+    content:""; position:absolute; left:3px; top:17px; bottom:-30px;
+    width:1px; background:var(--line);
+  }
+  .tl-item:last-child::after{display:none;}
+  .tl-title{font-weight:600; font-size:16.5px; margin:0 0 2px;}
+  .tl-meta{font-size:14px; color:var(--ink-soft); margin:0 0 8px;}
+  .tl-desc{font-size:15.5px; color:var(--ink); margin:0; max-width:64ch;}
+
+  /* Publications */
+  .pub{margin-bottom:20px; font-size:15.5px; max-width:66ch;}
+  .pub:last-child{margin-bottom:0;}
+  .pub-authors{color:var(--ink);}
+  .pub-authors b{font-weight:600;}
+  .pub-venue{font-style:italic; color:var(--ink-soft);}
+  .pub a{font-size:13.5px; margin-left:8px; white-space:nowrap;}
+
+  /* Beyond the lab */
+  .life-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px 28px; margin-bottom:32px;}
+  .life-item{font-size:15.5px;}
+  .life-item .life-label{display:block; font-weight:600; color:var(--accent); font-size:13.5px; margin-bottom:3px;}
+  @media (max-width:520px){ .life-grid{grid-template-columns:1fr;} }
+
+  .photo-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:10px;
+  }
+  .photo-grid figure{margin:0;}
+  .photo-grid img{
+    width:100%; aspect-ratio:1/1; object-fit:cover;
+    border-radius:4px; display:block;
+    box-shadow:0 0 0 1px var(--line);
+  }
+  .photo-grid figcaption{
+    font-size:12.5px; color:var(--ink-soft); margin-top:6px; line-height:1.3;
+  }
+  @media (max-width:560px){
+    .photo-grid{grid-template-columns:repeat(2,1fr);}
+  }
+
+  footer{padding:36px 0 60px; font-size:14px; color:var(--ink-soft);}
+  footer a{color:var(--ink-soft); text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-grid">
+      <img class="hero-photo" src="headshot.png" alt="Portrait of Beini Lu">
+      <div class="hero-text">
+        <h1>Beini Lu</h1>
+        <p class="hero-role">M.S. Student, Earth &amp; Environmental Engineering<span class="dot">·</span>Columbia University</p>
+        <div class="hero-links">
+          <a href="mailto:bl3150@columbia.edu">Email</a>
+          <a href="https://www.linkedin.com/in/beini-lu/">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=ZGTVHNwAAAAJ&hl=en">Google Scholar</a>
+          <a href="https://github.com/YOUR-GITHUB-USERNAME">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="lede">I'm a master's student in Sustainable Energy at Columbia University, working on dynamic optimization and model predictive control for renewable-powered energy conversion systems. I'm especially interested in how learning-based methods can speed up optimization and control while still respecting the physical and operational constraints that make energy systems actually work.</p>
+    <p class="lede">My path here started with hands-on experimental work on hydrogen production from biogas, moved through process modeling and techno-economic analysis, and has landed on dynamic control problems — I like that this field keeps pulling me from the lab bench toward the math, and back again.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+
+    <div class="tl-item">
+      <p class="tl-title">Dynamic Optimization and Control of Integrated CO₂-to-Ethanol Systems under Variable Renewable Power</p>
+      <p class="tl-meta">Columbia University · Advisor: Prof. Bolun Xu · Dec 2025 – Present</p>
+      <p class="tl-desc">Built an integrated Simulink model coupling PEM electrolysis, hydrogen storage, and CO₂-to-ethanol production, and developed a receding-horizon economic MPC framework to coordinate operation under renewable variability.</p>
+    </div>
+
+    <div class="tl-item">
+      <p class="tl-title">AutoML-Based Optimization of Biogas-to-Syngas Conversion</p>
+      <p class="tl-meta">China University of Petroleum–Beijing · Advisor: Prof. Yeqing Li · Dec 2024 – May 2025</p>
+      <p class="tl-desc">Simulated ~1,000 operating cases in Aspen Plus, then coupled an AutoGluon surrogate model with multi-objective particle swarm optimization to identify high-performing, economically preferred configurations.</p>
+    </div>
+
+    <div class="tl-item">
+      <p class="tl-title">Data-Driven Optimization of Hydrogen Production from Biogas Reforming</p>
+      <p class="tl-meta">China University of Petroleum–Beijing · Advisor: Prof. Yeqing Li · Jun 2023 – May 2024</p>
+      <p class="tl-desc">Ran a 42-day experimental campaign on a lab-scale reforming unit, then used AutoGluon, SHAP, and MOPSO to improve hydrogen yield by 6.68% — work that fed into a peer-reviewed publication.</p>
+    </div>
+
+    <div class="tl-item">
+      <p class="tl-title">Power Sector Analysis Assistant</p>
+      <p class="tl-meta">Institute of Energy, Peking University · Advisor: Dr. Junjie Kang · Mar 2025 – Jun 2025</p>
+      <p class="tl-desc">Compared decarbonization and distributed-PV policy across China and major international markets; supported a mid-term research report on Shandong's PV transition.</p>
+    </div>
+
+    <div class="tl-item">
+      <p class="tl-title">Anaerobic Digestion and Microbial Characterization</p>
+      <p class="tl-meta">Guangzhou Institute of Energy Conversion, CAS · Advisor: Prof. Yongming Sun · Jul 2023 – Aug 2023</p>
+      <p class="tl-desc">Cultivated and characterized microbial isolates for anaerobic-digestion studies, and supported early investigations into microbial electron-transfer mechanisms.</p>
+    </div>
+
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <span class="pub-authors">Ding, C.*, Zhang, Y.*, Feng, Y., Li, W., Peng, J., Huang, H., Cheng, Z., <b>Lu, B.</b>, Li, L., Li, Y., Feng, L., Zhou, H., &amp; Xu, C.</span> (2024). AI data-driven based in-depth interpretation and inverse design for hydrogen yield from biogas direct reforming. <span class="pub-venue">ACS Sustainable Resource Management, 1</span>(11), 2384–2393.
+      <a href="https://doi.org/10.1021/acssusresmgt.4c00227">DOI</a>
+    </div>
+
+    <div class="pub">
+      <span class="pub-authors">Ding, C., Liu, J., Wang, J., Le, J., <b>Lu, B.</b>, Qu, N., Zhao, S., Zhang, H., Su, J., Li, Y., &amp; Liu, Q.</span> (2025). Modified biochar effectively removes tetracycline and antibiotic resistance genes to enhance anaerobic digestion performance. <span class="pub-venue">Journal of Environmental Chemical Engineering, 13</span>(6), 120076.
+      <a href="https://doi.org/10.1016/j.jece.2025.120076">DOI</a>
+    </div>
+
+    <div class="pub">
+      <span class="pub-authors">Feng, X., Song, L., Zhong, L., <b>Lu, B.</b>, Deng, D., Litti, Y., Kovalev, A. A., Liang, J., Sun, Y., Li, Y., &amp; Li, L.</span> (2024). High modularity driven by disinfectant glutaraldehyde response strategy promotes anaerobic system performance. <span class="pub-venue">SSRN</span> [Preprint].
+      <a href="https://doi.org/10.2139/ssrn.4984147">DOI</a>
+    </div>
+  </section>
+
+  <section id="life">
+    <h2>Beyond the lab</h2>
+    <p class="lede">When I'm not at my desk, I'm usually planning the next trip. I like hiking — the kind that starts before sunrise and ends somewhere with a very good view — catching musicals whenever I can, and generally finding an excuse to go somewhere new.</p>
+    <div class="life-grid">
+      <div class="life-item"><span class="life-label">Currently</span>New York, NY</div>
+      <div class="life-item"><span class="life-label">Outside the lab</span>Hiking, musicals, travel</div>
+      <div class="life-item"><span class="life-label">Recently</span>Peru, Turkey, Guatemala</div>
+      <div class="life-item"><span class="life-label">Always up for</span>A good trail or a Broadway recommendation</div>
+    </div>
+    <div class="photo-grid">
+      <figure>
+        <img src="photos/hike-volcano.jpg" alt="Hiking at sunrise near an active volcano">
+        <figcaption>Sunrise hike, Acatenango</figcaption>
+      </figure>
+      <figure>
+        <img src="photos/rainbow-mountain.jpg" alt="Standing in front of Rainbow Mountain, Peru">
+        <figcaption>Rainbow Mountain, Peru</figcaption>
+      </figure>
+      <figure>
+        <img src="photos/broadway.jpg" alt="Playbill for Maybe Happy Ending on Broadway">
+        <figcaption>Maybe Happy Ending, Broadway</figcaption>
+      </figure>
+      <figure>
+        <img src="photos/beach.jpg" alt="On the beach in Miami">
+        <figcaption>Miami</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer>
+    <p>Beini Lu · New York, NY · <a href="mailto:bl3150@columbia.edu">bl3150@columbia.edu</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>
